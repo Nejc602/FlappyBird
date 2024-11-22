@@ -35,6 +35,8 @@
             ground = new PictureBox();
             scoreBoard = new Label();
             gameTimer = new System.Windows.Forms.Timer(components);
+            startButton = new Button();
+            exitButton = new Button();
             ((System.ComponentModel.ISupportInitialize)flappyBird).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pipeTop).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pipeBottom).BeginInit();
@@ -93,12 +95,34 @@
             gameTimer.Interval = 20;
             gameTimer.Tick += gameTimerEvent;
             // 
+            // startButton
+            // 
+            startButton.Location = new Point(220, 248);
+            startButton.Name = "startButton";
+            startButton.Size = new Size(204, 93);
+            startButton.TabIndex = 5;
+            startButton.Text = "Start";
+            startButton.UseVisualStyleBackColor = true;
+            startButton.Click += startButton_Click;
+            // 
+            // exitButton
+            // 
+            exitButton.Location = new Point(220, 389);
+            exitButton.Name = "exitButton";
+            exitButton.Size = new Size(204, 93);
+            exitButton.TabIndex = 6;
+            exitButton.Text = "Exit";
+            exitButton.UseVisualStyleBackColor = true;
+            exitButton.Click += exitButton_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.MenuHighlight;
             ClientSize = new Size(671, 847);
+            Controls.Add(exitButton);
+            Controls.Add(startButton);
             Controls.Add(scoreBoard);
             Controls.Add(ground);
             Controls.Add(pipeBottom);
@@ -124,5 +148,7 @@
         private PictureBox ground;
         private Label scoreBoard;
         private System.Windows.Forms.Timer gameTimer;
+        private Button startButton;
+        private Button exitButton;
     }
 }
